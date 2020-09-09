@@ -32,7 +32,7 @@ class ScrapeCompany:
       options = webdriver.ChromeOptions()
       options.add_argument("headless")
       self.driver = webdriver.Chrome('/usr/local/bin/chromedriver',chrome_options=chrome_options)
-
+      
       self.location = location
       self.jobs_totals = []
       self.full_jobs_data = []
