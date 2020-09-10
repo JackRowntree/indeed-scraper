@@ -17,7 +17,7 @@ class ScrapeCompany:
    'Common base class for scraper'
    #class attribute to ensure that employer data is not re-scraped
    employers_scraped=[]
-   def __init__(self, name,location,search_term=None,):
+   def __init__(self, name=None,location=None,search_term=None,):
 
       self.manual=False
       if search_term:
@@ -31,7 +31,7 @@ class ScrapeCompany:
       #headerless browsing
       options = webdriver.ChromeOptions()
       options.add_argument("headless")
-      self.driver = webdriver.Chrome('/usr/local/bin/chromedriver',chrome_options=chrome_options)
+      self.driver = webdriver.Chrome('/usr/local/bin/chromedriver',chrome_options=options)
       
       self.location = location
       self.jobs_totals = []

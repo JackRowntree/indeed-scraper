@@ -1,17 +1,3 @@
-import re 
-import json
-import time
-import random
-from selenium import webdriver,common
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from datetime import datetime
-from bs4 import BeautifulSoup
-from urllib3.exceptions import ProtocolError,MaxRetryError
-from numpy import ceil
 from scraper.scraper import ScrapeCompany
 import pytest
 
@@ -36,7 +22,7 @@ def listing(scraper):
 	return listing
 
 @pytest.mark.parametrize("css_selec", ['#text-input-what,#what','#text-input-where,#where','.icl-WhatWhere-button,.input_submit'])
-def test_search_term_input(is_displayed):
+def test_search_term_input(is_displayed,css_selec):
 	assert is_displayed(css_selec)
 
 def test_search_results(scraper,is_displayed):
