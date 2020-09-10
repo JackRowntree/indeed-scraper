@@ -12,7 +12,7 @@ pip install -r requirements.txt
 Before data collection, it is good to know whether indeed.co.uk html layout has changed (seems to be pretty stable compared to other job sites)
 This repo includes a test suite to ensure everything is as expected - simply run the following:
 ```
-pytest test/
+python -m pytest test
 ```
 ## Parameter entry
 If using for specific companies' employers, save your desired search terms in `companies_to_search.csv`
